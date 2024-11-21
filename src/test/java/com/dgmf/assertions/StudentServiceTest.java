@@ -40,4 +40,36 @@ class StudentServiceTest {
         // Display the Custom Message when the Test failed
         assertTrue(() -> actualResult, () -> "List of Students is Empty");
     }
+
+    @Test
+    public void getStudentsTestUsingAssertFalse() {
+        // TEST LOGIC
+        StudentService studentService = new StudentService();
+
+        // Student student = new Student(1, "John Doe");
+
+        List<Student> listOfStudents = studentService.getStudents();
+
+        // studentService.addStudent(student);
+
+        boolean actualResult = listOfStudents.isEmpty();
+
+        // ASSERTIONS ==> Different "assertFalse()" Methods Use Cases
+        // assertFalse(actualResult);
+
+        // Display the Custom Message when the Test failed
+        // assertFalse(actualResult, "List of Students should not be Empty");
+
+        // BooleanSupplier Interface
+        // assertFalse(() -> actualResult);
+
+        // Display the Custom Message when the Test failed
+        // assertFalse(() -> actualResult, "List of Students should not be Empty");
+
+        // Display the Custom Message when the Test failed
+        // assertFalse(actualResult, () -> "List of Students should not be Empty");
+
+        // Display the Custom Message when the Test failed
+        assertFalse(() -> actualResult, () -> "List of Students should not be Empty");
+    }
 }
